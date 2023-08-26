@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling", "ExceptionHandling\ExceptionHandling.csproj", "{3C962A88-EB54-41B1-B448-C3AC0A74A4BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{D5AFA7B2-2C09-4CD1-BA97-2B3AD8E204AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C962A88-EB54-41B1-B448-C3AC0A74A4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C962A88-EB54-41B1-B448-C3AC0A74A4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C962A88-EB54-41B1-B448-C3AC0A74A4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C962A88-EB54-41B1-B448-C3AC0A74A4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5AFA7B2-2C09-4CD1-BA97-2B3AD8E204AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5AFA7B2-2C09-4CD1-BA97-2B3AD8E204AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5AFA7B2-2C09-4CD1-BA97-2B3AD8E204AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5AFA7B2-2C09-4CD1-BA97-2B3AD8E204AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7FEA867-9432-4E5A-A25E-55B1E785F756}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApplication1.Models.Catagory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create" ,new {@class ="btn btn-success"})
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CatagoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatagoryName)
+        </td>
+        <td>
+        @Html.ActionLink("Activate", "Activate", new { id = item.CatagoryId }) &nbsp;
+        @Html.ActionLink("Deactivate", "Deactivate", new { id = item.CatagoryId })
+        </td>
+      
+        <td>
+            @Html.ActionLink("List of Product", "Edit", new { id = item.CatagoryId }) |
+            @Html.ActionLink("EditCatagory ", "Details", new { id = item.CatagoryId }) |
+            @Html.ActionLink("DeleteCatagory", "Delete", new { id = item.CatagoryId })
+        </td>
+    </tr>
+}
+
+</table>
