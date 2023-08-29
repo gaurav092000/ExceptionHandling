@@ -5,39 +5,46 @@
 }
 
 <h2>Index</h2>
-
+@Html.Raw(TempData["Create"])
+@Html.Raw(TempData["Edit"])
+@Html.Raw(TempData["Delete"])
 <p>
-    @Html.ActionLink("Create New", "Create" ,new {@class ="btn btn-success"})
-    
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CatagoryName)
+            @*@Html.DisplayNameFor(model => model.CatagoryName)*@
+            <p>Catagory</p>
         </th>
+
         <th>
-            @Html.DisplayNameFor(model => model.status)
+            <p>Status</p>
         </th>
-        
-        <th></th>
+
+        <th>
+            <p>Action</p>
+        </th>
+
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CatagoryName)
-        </td>
-        <td>
-        @Html.ActionLink("Activate", "Activate", new { id = item.CatagoryId }) &nbsp;
-        @Html.ActionLink("Deactivate", "Deactivate", new { id = item.CatagoryId })
-        </td>
-      
-        <td>
-            @Html.ActionLink("List of Product", "Edit", new { id = item.CatagoryId }) |
-            @Html.ActionLink("EditCatagory ", "Details", new { id = item.CatagoryId }) |
-            @Html.ActionLink("DeleteCatagory", "Delete", new { id = item.CatagoryId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CatagoryName)
+            </td>
+            <td>
+                @Html.ActionLink("Active", "EditCataory", new { id = item.CatagoryId }) |
+                @Html.ActionLink("Deactive", "Details", new { id = item.CatagoryId })
+            </td>
+            <td>
+                @*@Html.ActionLink("Product","Product",new  { id = item.CatagoryId,})*@
+                @Html.ActionLink("ProductList", "Index", "Product", new { id = item.CatagoryId }, null) |
+                @Html.ActionLink("Edit Catagory", "EditCataory", new { id = item.CatagoryId }) |
+                @Html.ActionLink("Delete Catagory", "Delete", new { id = item.CatagoryId })
+            </td>
+        </tr>
+    }
 
 </table>

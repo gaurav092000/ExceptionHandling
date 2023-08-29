@@ -124,12 +124,17 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CatagoryController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202308260628403_update.cs" />
     <Compile Include="Migrations\202308260628403_update.designer.cs">
       <DependentUpon>202308260628403_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308290558402_update1.cs" />
+    <Compile Include="Migrations\202308290558402_update1.designer.cs">
+      <DependentUpon>202308290558402_update1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Catagory.cs" />
@@ -164,7 +169,11 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Views\Catagory\Create.cshtml" />
     <Content Include="Views\Catagory\Index.cshtml" />
+    <Content Include="Views\Catagory\EditCataory.cshtml" />
+    <Content Include="Views\Catagory\Delete.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,6 +187,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202308260628403_update.resx">
       <DependentUpon>202308260628403_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308290558402_update1.resx">
+      <DependentUpon>202308290558402_update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

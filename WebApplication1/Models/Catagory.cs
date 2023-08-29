@@ -15,6 +15,7 @@ namespace WebApplication1.Models
         public string CatagoryName { get; set; }
 
         [Required(ErrorMessage = "CatagoryDescrition Required")]
+
         public string CatagoryDescription { get; set; }
 
        public  bool status { get; set; }

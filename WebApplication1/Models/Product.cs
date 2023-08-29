@@ -29,6 +29,9 @@ namespace WebApplication1.Models
         public virtual Catagory Catagory { get; set; }  
 
 
+       
+
+
 
 
 

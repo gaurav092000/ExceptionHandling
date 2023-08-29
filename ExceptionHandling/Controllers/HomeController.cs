@@ -8,17 +8,10 @@ namespace ExceptionHandling.Controllers
 {
     public class HomeController : Controller
     {
+        [HandleError]
         public ActionResult Index()
         {
-            try
-            {
-                throw new Exception();
-            }
-            catch( Exception ex) 
-            {
-                return RedirectToAction("Error ", "Home");
-            }
-
+            throw new Exception();
             return View();
         }
 
@@ -27,18 +20,6 @@ namespace ExceptionHandling.Controllers
             return View();        
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        
     }
 }
