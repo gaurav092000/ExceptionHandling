@@ -100,6 +100,12 @@ namespace WebApplication1.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Details(int id)
+        {
+            var delete = db.catagories.Where(model => model.CatagoryId == id).FirstOrDefault();
+            return View(delete);
+        }
+
 
        
 

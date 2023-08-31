@@ -83,5 +83,29 @@ namespace WebApplication1.Controllers
             return View();
 
         }
+        public ActionResult Delete(int id)
+        {
+            if(id > 0)
+            {
+                var delete = db1.products.Where(model => model.ProductId==id).FirstOrDefault();
+                if(delete!=null)
+                {
+                    db1.Entry(delete).State = EntityState.Deleted;
+                    int n= db1.SaveChanges();
+                    if(n>0)
+                    {
+                        TempData["Edit"] = "<script>alert('Data Edit Successfully')</script>";
+                        return RedirectToAction("Index", "Product", new {id = id});
+                    }
+                    else
+                    {
+                        TempData["Create"] = "<script>alert('Data Not Edit')</script>";
+                    }
+                }
+                
+
+            }
+            return View();
+        }
     }
 }
