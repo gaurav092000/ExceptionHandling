@@ -6,17 +6,19 @@ using System.Web.Mvc;
 
 namespace ExceptionHandling.Controllers
 {
+ 
     public class HomeController : Controller
     {
-        [HandleError]
+        //[HandleError] action method mai errorfilter lagna
         public ActionResult Index()
         {
             throw new Exception();
             return View();
         }
 
-        public ActionResult Error() 
+        public ActionResult About() 
         {
+            throw new Exception();
             return View();        
         }
 

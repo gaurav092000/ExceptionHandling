@@ -1,14 +1,18 @@
 ﻿@model IEnumerable<WebApplication1.Models.Product>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "IndexList";
 }
 
-<h2>Index</h2>
-
-
+<h2>IndexList</h2>
+@Html.Raw(TempData["Create"])
+@Html.Raw(TempData["Delete"])
 <p>
     @Html.ActionLink("Create New", "Create")
+
+</p>
+<p>
+    @Html.ActionLink("Back to Catagory", "Index", "Catagory")
 </p>
 <table class="table">
     <tr>
