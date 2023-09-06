@@ -1,9 +1,11 @@
-﻿@model IEnumerable<WebApplication1.Models.Catagory>
+﻿@model IPagedList<WebApplication1.Models.Catagory>
 
 @{
     ViewBag.Title = "Index";
 }
 
+@using PagedList.Mvc;
+@using PagedList;
 <h2>Index</h2>
 @Html.Raw(TempData["Create"])
 @Html.Raw(TempData["Edit"])
@@ -48,3 +50,5 @@
     }
 
 </table>
+
+@Html.PagedListPager(Model,i=>Url.Action("Index","Catagory",new {i, search = Request.QueryString["search"] }))

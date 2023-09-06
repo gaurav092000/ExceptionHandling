@@ -22,5 +22,6 @@ namespace WebApplication1.Models
 
         public ICollection<Product> Products { get; set; }
 
+        
     }
 }

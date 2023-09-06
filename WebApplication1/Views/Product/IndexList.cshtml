@@ -1,4 +1,8 @@
-﻿@model IEnumerable<WebApplication1.Models.Product>
+﻿@*@model IEnumerable<WebApplication1.Models.Product>*@
+@using WebApplication1.Models;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList<WebApplication1.Models.Product>
 
 @{
     ViewBag.Title = "IndexList";
@@ -17,16 +21,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Catagory.CatagoryName)
+             CatagoryName
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductName)
+           ProductName
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductPrice)
+       ProductPrice
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+           Description
         </th>
         <th></th>
     </tr>
@@ -55,3 +59,9 @@
     }
 
 </table>
+<div></div>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber )/@Model.PageCount)
+<div>
+    @Html.PagedListPager(Model ,page => Url.Action("IndexList","Product", new { page = page } ))
+    </div>
+

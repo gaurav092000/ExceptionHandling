@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
+using PagedList.Mvc;
+using PagedList;
 
 namespace WebApplication1.Controllers
 {
@@ -13,10 +15,12 @@ namespace WebApplication1.Controllers
         // GET: Catagory
 
         CrudContext db =new CrudContext();
-        public ActionResult Index()
+        public ActionResult Index(int ? i)
         {
-            var data = db.catagories.Include(x => x.Products).ToList();
+            var data = db.catagories.Include(x => x.Products).ToList().ToPagedList(i ?? 1,3);
             return View(data);
+            
+            
         }
 
        public ActionResult Create() 

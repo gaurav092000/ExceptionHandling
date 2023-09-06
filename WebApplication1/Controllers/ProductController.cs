@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -14,9 +15,11 @@ namespace WebApplication1.Controllers
 
         CrudContext db1 = new CrudContext();
 
-        public ActionResult IndexList()
+        public ActionResult IndexList(int? page)
         {
-            var data= db1.products.Include(x => x.Catagory).ToList();
+            var pagenumber = page ?? 1;
+            var pagesize = 3;
+            var data= db1.products.OrderBy(x => x.CategoryId).ToPagedList(pagenumber,pagesize);
             return View(data);
         }
         public ActionResult Index(int id)
