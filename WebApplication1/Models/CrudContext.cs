@@ -11,5 +11,13 @@ namespace WebApplication1.Models
       public   DbSet<Catagory> catagories { get; set; }
 
        public  DbSet<Product> products { get; set; }   
+
+
+        public DbSet<User> users { get; set; }
+
+        public System.Data.Entity.DbSet<WebApplication1.Models.SignUp> SignUps { get; set; }
     }
+
+
+
 }

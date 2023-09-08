@@ -15,9 +15,24 @@ namespace WebApplication1.Controllers
         // GET: Catagory
 
         CrudContext db =new CrudContext();
+
+        public ActionResult Login()
+        {
+            if (Session["Id"]==null)
+            {
+                return RedirectToAction("Index","Login");
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
         public ActionResult Index(int ? i)
         {
-            var data = db.catagories.Include(x => x.Products).ToList().ToPagedList(i ?? 1,3);
+
+
+            
+            var data = db.catagories.Include(x => x.Products).ToList().ToPagedList(i ?? 1,5);
             return View(data);
             
             
@@ -111,8 +126,12 @@ namespace WebApplication1.Controllers
         }
 
 
-       
 
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
+        }
 
 
 

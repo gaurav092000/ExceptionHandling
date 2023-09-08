@@ -5,10 +5,13 @@
 }
 
 <h2>Index</h2>
-
+@Html.Raw(TempData["Create"])
 
 <p>
     @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @Html.ActionLink("Back to List", "IndexList")
 </p>
 <table class="table">
     <tr>

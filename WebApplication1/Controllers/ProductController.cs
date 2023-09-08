@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
         public ActionResult IndexList(int? page)
         {
             var pagenumber = page ?? 1;
-            var pagesize = 3;
+            var pagesize = 5;
             var data= db1.products.OrderBy(x => x.CategoryId).ToPagedList(pagenumber,pagesize);
             return View(data);
         }
@@ -116,6 +116,12 @@ namespace WebApplication1.Controllers
             }
             return View();
         }
+        public ActionResult Details(int id)
+        {
+            var deletails = db1.catagories.Where(model => model.CatagoryId == id).FirstOrDefault();
+            return View(deletails);
+        }
+
 
     }
 }

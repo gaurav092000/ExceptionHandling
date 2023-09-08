@@ -131,6 +131,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CatagoryController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -139,10 +140,16 @@
     <Compile Include="Migrations\202309060903522_add.designer.cs">
       <DependentUpon>202309060903522_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309081241093_login.cs" />
+    <Compile Include="Migrations\202309081241093_login.designer.cs">
+      <DependentUpon>202309081241093_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Catagory.cs" />
     <Compile Include="Models\CrudContext.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SignUp.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +188,9 @@
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Catagory\Details.cshtml" />
     <Content Include="Views\Product\IndexList.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\SignUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -190,10 +200,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Logout\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202309060903522_add.resx">
       <DependentUpon>202309060903522_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309081241093_login.resx">
+      <DependentUpon>202309081241093_login.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
